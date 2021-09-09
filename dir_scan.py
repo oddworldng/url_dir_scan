@@ -69,16 +69,18 @@ if len(sys.argv) > 1:
 	
 	# Read dirb output file (txt)
 	
+	# Remove dirb output file
+	
 	
 	# Run gobuster
-	print("Running gobuster...")
-	#os.system('gobuster dir -q --url ' + url + ' --wordlist ' + wordlist + ' -o ' + gobuster_output_file)
+	print("\nRunning gobuster...")
+	os.system('gobuster dir -q --url ' + url + ' --wordlist ' + wordlist + ' -o ' + gobuster_output_file)
 	
 	# Read gobuster output file (txt)
 	output_gobuster = read_gobuster_txt()
 	
 	# Remove gobuster output file
-	#os.system('rm ' + gobuster_output_file)
+	os.system('rm ' + gobuster_output_file)
 	
 	# Run wfuzz
 	print("\nRunning wfuzz...")
@@ -88,7 +90,7 @@ if len(sys.argv) > 1:
 	output_wfuzz = read_wfuzz_json(url)
 	
 	# Remove gobuster output file
-	#os.system('rm ' + wfuzz_output_file)
+	os.system('rm ' + wfuzz_output_file)
 	
 	# OUTPUS
 	print("Gobuster... ")
@@ -96,9 +98,6 @@ if len(sys.argv) > 1:
 	
 	print("Wfuzz... ")	
 	print(output_wfuzz)
-	
-	
-	
 	
 else:
 	print("No arguments found")
